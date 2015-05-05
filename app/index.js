@@ -1,15 +1,19 @@
 "use strict";
 
-var angular = require('angular'),
-    ngModule, modules = [];
+function initApp() {
+    var angular = require('angular'),
+        modules = [];
 
-function addDependency(name, isRequire) {
-    if (isRequire) {
-        require(name);
-    }
-    modules.push(name);
+    modules.push(require('./router'));
+    modules.push(require('./modules/year/module'));
+    modules.push(require('./modules/month/module'));
+    modules.push(require('./modules/week/module'));
+
+    angular.module('application', modules);
 }
 
-addDependency(require('angular-ui-router'), false);
+initApp();
 
-ngModule = angular.module('application', modules);
+if (module.hot) {
+    module.hot.accept(initApp);
+}
