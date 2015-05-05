@@ -4,12 +4,12 @@ var angular = require('angular'),
     ngModule, modules = [];
 
 function addDependency(name, isRequire) {
-    if (!isRequire) {
+    if (isRequire) {
         require(name);
     }
     modules.push(name);
 }
 
-addDependency('ui-router');
+addDependency(require('angular-ui-router'), false);
 
 ngModule = angular.module('application', modules);
