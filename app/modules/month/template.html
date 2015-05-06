@@ -1,4 +1,8 @@
 <div>
-    <div class="title"><p>Month</p></div>
-    <div class="months-wrapper">{{greeting}}</div>
+    <div class="period-title">{{month.name}}</div>
+    <div class="month-wrapper small-month fl"
+         ng-class="{clear: $index%4 === 0 && !$first}"
+         ng-repeat="day in days">
+        <div small-day="day" year="{{startYear}}"></div>
+    </div>
 </div>

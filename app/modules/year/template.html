@@ -3,6 +3,6 @@
     <div class="month-wrapper small-month fl"
          ng-class="{clear: $index%4 === 0 && !$first}"
          ng-repeat="month in months">
-        <div small-month="month"></div>
+        <div small-month="month" year="{{startYear}}"></div>
     </div>
 </div>

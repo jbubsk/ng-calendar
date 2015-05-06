@@ -1,10 +1,7 @@
 "use strict";
-var angular = require('angular'),
-    moduleName = 'week';
+var moduleName = 'week';
 
-angular.module(moduleName)
-    .controller('WeekController', function ($scope) {
-        $scope.greeting = 'Scope from Week :)';
-    });
+require('angular').module(moduleName ,[])
+    .controller('WeekController', require('./controller'));
 
 module.exports = moduleName;

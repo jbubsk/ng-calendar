@@ -4,7 +4,8 @@ var dependencies = require('./initializer').modules;
 require('styles');
 
 function initApp() {
-    require('angular').module('application', dependencies);
+    require('angular').module('application', dependencies)
+        .service('AppService', require('./service'));
 }
 
 initApp();
