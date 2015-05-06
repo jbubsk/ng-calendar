@@ -5,9 +5,13 @@
     <title>WPAng</title>
 </head>
 <body ng-app="application">
+<script src="http://localhost:8080/webpack-dev-server.js"></script>
 <script src="vendors.js"></script>
 <script src="bundle.js"></script>
-<h1>Webpack Angular</h1>
-<ui-view></ui-view>
+
+<div ng-controller="HeaderController" ng-include="templateUrl"></div>
+
+<div id="page" ui-view></div>
+
 </body>
 </html>

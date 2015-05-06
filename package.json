@@ -4,20 +4,23 @@
   "description": "Base sample of angular",
   "main": "app/index.html",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval -hot --progress --colors --content-base app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --content-base app",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base app/",
+    "deploy": "NODE_ENV=production webpack --optimize-minimize"
   },
   "author": "Mikhail Zheludev",
   "license": "ISC",
-  "devDependencies": {
-    "webpack": "^1.8.11",
-    "webpack-dev-server": "^1.8.2"
-  },
   "dependencies": {
     "angular": "^1.3.15",
     "angular-ui-router": "^0.2.14",
+    "css-loader": "^0.12.0",
     "file-loader": "^0.8.1",
     "html-loader": "^0.3.0",
-    "ngtemplate-loader": "^1.3.0"
+    "ngtemplate-loader": "^1.3.0",
+    "node-sass": "^2.1.1",
+    "sass-loader": "^0.4.2",
+    "style-loader": "^0.12.1",
+    "webpack": "^1.8.11",
+    "webpack-dev-server": "^1.8.2"
   }
 }

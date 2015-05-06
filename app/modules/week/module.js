@@ -2,9 +2,9 @@
 var angular = require('angular'),
     moduleName = 'week';
 
-angular.module(moduleName, [])
+angular.module(moduleName)
     .controller('WeekController', function ($scope) {
-        $scope.greeting = 'Hello! Week!';
+        $scope.greeting = 'Scope from Week :)';
     });
 
 module.exports = moduleName;

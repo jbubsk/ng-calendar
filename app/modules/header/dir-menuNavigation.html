@@ -1,0 +1,8 @@
+<div>
+    <div ng-repeat="nav in navigs" class="nav fl" ng-class="{active: nav.isActive}">
+        <a ng-href="{{'#' + nav.href}}"
+           ng-bind="nav.name">
+        </a>
+    </div>
+    <div class="clear"></div>
+</div>

@@ -1,15 +1,10 @@
 "use strict";
 
+var dependencies = require('./initializer').modules;
+require('styles');
+
 function initApp() {
-    var angular = require('angular'),
-        modules = [];
-
-    modules.push(require('./router'));
-    modules.push(require('./modules/year/module'));
-    modules.push(require('./modules/month/module'));
-    modules.push(require('./modules/week/module'));
-
-    angular.module('application', modules);
+    require('angular').module('application', dependencies);
 }
 
 initApp();

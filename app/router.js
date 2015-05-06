@@ -3,7 +3,7 @@
 var angular = require('angular'),
     moduleName = 'router';
 
-angular.module(moduleName, [require('angular-ui-router')])
+angular.module(moduleName)
     .config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise("/year");
@@ -15,7 +15,7 @@ angular.module(moduleName, [require('angular-ui-router')])
                 controller: 'YearController'
             })
             .state('month', {
-                url: "/month",
+                url: "/month?index",
                 templateUrl: require('./modules/month/template.html'),
                 controller: 'MonthController'
             })
