@@ -1,4 +1,4 @@
-module.exports = function ($scope, AppService) {
-    $scope.startYear = 2015;
-    $scope.months = AppService.getMonths();
+module.exports = function (AppService) {
+    this.startYear = 2015;
+    this.months = AppService.getMonths();
 };

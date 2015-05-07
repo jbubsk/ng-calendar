@@ -1,3 +1,3 @@
-module.exports = function ($scope) {
-    $scope.greeting = 'Scope from Week :)';
+module.exports = function () {
+    this.greeting = 'Scope from Week :)';
 };

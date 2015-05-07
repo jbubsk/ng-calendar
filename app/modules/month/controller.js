@@ -1,8 +1,9 @@
-module.exports = function ($scope, $state, AppService) {
+module.exports = function ($state, AppService) {
     var monthIndex = parseInt($state.params.month);
 
-    $scope.month = {
-        name: AppService.getMonthName(monthIndex)
+    this.period = {
+        month: AppService.getMonthName(monthIndex),
+        year: $state.params.year
     };
-    $scope.days = AppService.getDaysForMonth(monthIndex);
+    this.days = AppService.getDaysForMonth(monthIndex);
 };

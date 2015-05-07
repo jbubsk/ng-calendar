@@ -1,26 +1,28 @@
 "use strict";
-var moduleName = 'router';
+var moduleName = 'router',
+    uiRouter = require('angular-ui-router');
 
-require('angular').module(moduleName, ['ui.router'])
+require('angular').module(moduleName, [uiRouter])
     .config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise("/year");
 
         $stateProvider
-            .state('year', {
+            .state('pub', {
+                abstract: true,
+                templateUrl: require('./modules/header/template.html')
+            })
+            .state('pub.year', {
                 url: "/year",
-                templateUrl: require('./modules/year/template.html'),
-                controller: 'YearController'
+                templateUrl: require('./modules/year/template.html')
             })
-            .state('month', {
+            .state('pub.month', {
                 url: "/month?year&month&",
-                templateUrl: require('./modules/month/template.html'),
-                controller: 'MonthController'
+                templateUrl: require('./modules/month/template.html')
             })
-            .state('week', {
+            .state('pub.week', {
                 url: "/week",
-                templateUrl: require('./modules/week/template.html'),
-                controller: 'WeekController'
+                templateUrl: require('./modules/week/template.html')
             });
     });
 

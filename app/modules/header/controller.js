@@ -1,7 +1,7 @@
-module.exports = function ($scope) {
-    $scope.templateUrl = require('./template.html');
+module.exports = function () {
+    this.templateUrl = require('./template.html');
 
-    $scope.navigs = [
+    this.navigs = [
         {
             name: 'Year',
             href: 'year'

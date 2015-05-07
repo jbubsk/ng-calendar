@@ -9,7 +9,7 @@ module.exports = function ($state) {
         templateUrl: require('./dir-smallMonth.html'),
         link: function ($scope) {
             $scope.click = function (month) {
-                $state.go('month', {
+                $state.go('pub.month', {
                     year: $scope.year,
                     month: month.index
                 });

@@ -23,16 +23,18 @@ module.exports = function () {
             {index: 0, name: 'Sunday'}
         ];
 
+    //todo
     function getDayOfWeek(){
         var result = days.filter(function (day) {
             return
         });
         return result;
     }
+
     return {
-        getDaysForMonth: function (month) {
+        getDaysForMonth: function (year, month) {
             var days = [],
-                daysInMonth = new Date().getDate();
+                daysInMonth = new Date(year, month, 0).getDate();
 
             for (var i = 0; i < daysInMonth; i++) {
                 days.push({index: i,name: ''});
@@ -43,7 +45,6 @@ module.exports = function () {
             var result = months.filter(function (month) {
                 return month.index === index;
             });
-            console.log(result.length > 0 ? result[0].name : '');
             return result.length > 0 ? result[0].name : '';
         },
         getMonths: function () {

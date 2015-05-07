@@ -1,8 +1,8 @@
-<div>
-    <div class="period-title">{{month.name}}</div>
+<div ng-controller="MonthController as ctrl">
+    <div class="period-title">{{ctrl.period.year + ' ' + ctrl.period.month}}</div>
     <div class="month-wrapper small-month fl"
          ng-class="{clear: $index%4 === 0 && !$first}"
-         ng-repeat="day in days">
-        <div small-day="day" year="{{startYear}}"></div>
+         ng-repeat="day in ctrl.days">
+        <div small-day="day" year="{{ctrl.startYear}}"></div>
     </div>
 </div>
