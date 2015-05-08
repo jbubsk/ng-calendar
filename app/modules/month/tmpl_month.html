@@ -1,0 +1,16 @@
+<div ng-controller="MonthController as ctrl">
+    <div id="calendar-header">
+        <div class="arrow fl" ng-click="ctrl.back()">&lt;</div>
+        <div class="period-title fl">{{ctrl.period.year + ' ' + ctrl.period.month}}</div>
+        <div class="arrow fr" ng-click="ctrl.forward()">&gt;</div>
+        <div class="clear"></div>
+    </div>
+    <div id="calendar">
+        <div class="fl"
+             ng-class="{clear: $index%7 === 0 && !$first}"
+             ng-repeat="day in ctrl.days">
+            <div small-day="day" year="{{ctrl.startYear}}"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

@@ -27,7 +27,12 @@ var config = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new webpack.DefinePlugin({
+            CONFIG: {
+                DEBUG: !process.env.NODE_ENV
+            }
+        })
     ],
     output: {
         path: utils.getOutputDir(),

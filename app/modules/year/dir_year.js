@@ -1,4 +1,4 @@
-module.exports = function ($state) {
+module.exports = function ($state, AppService) {
     return {
         restriction: 'A',
         replace: true,
@@ -6,7 +6,7 @@ module.exports = function ($state) {
             month: '=smallMonth',
             year: '@'
         },
-        templateUrl: require('./dir-smallMonth.html'),
+        templateUrl: require('./dir_tmpl_smallmonth.html'),
         link: function ($scope) {
             $scope.click = function (month) {
                 $state.go('pub.month', {
@@ -14,7 +14,7 @@ module.exports = function ($state) {
                     month: month.index
                 });
             };
-            $scope.days = new Date(2015, $scope.month.index, 0).getDate();
+            $scope.days = AppService.getNumberDaysOfMonth(2015, $scope.month.index);
             $scope.classs = new Date().getMonth() === $scope.month.index ? 'current' : '';
         }
     }

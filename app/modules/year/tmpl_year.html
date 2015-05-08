@@ -1,6 +1,6 @@
 <div ng-controller="YearController as year">
     <div class="period-title">{{year.startYear}}</div>
-    <div class="month-wrapper small-month fl"
+    <div class="fl"
          ng-class="{clear: $index%4 === 0 && !$first}"
          ng-repeat="month in year.months">
         <div small-month="month" year="{{year.startYear}}"></div>

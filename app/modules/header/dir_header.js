@@ -5,7 +5,7 @@ module.exports = function ($rootScope, $location) {
         scope: {
             navigs: '=navItems'
         },
-        templateUrl: require('./dir-menuNavigation.html'),
+        templateUrl: require('./dir_tmpl_nav.html'),
         link: function ($scope) {
 
             function handleNavigationMenu(resolve) {
@@ -16,7 +16,7 @@ module.exports = function ($rootScope, $location) {
 
             $rootScope.$on('$stateChangeStart', function (event, toState) {
                 handleNavigationMenu(function setActive(nav) {
-                    return toState.name === nav.href;
+                    return toState.name.indexOf(nav.href) > -1;
                 });
             });
             handleNavigationMenu(function setActive(nav) {

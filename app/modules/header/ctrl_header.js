@@ -1,6 +1,4 @@
 module.exports = function () {
-    this.templateUrl = require('./template.html');
-
     this.navigs = [
         {
             name: 'Year',

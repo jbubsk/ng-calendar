@@ -10,19 +10,19 @@ require('angular').module(moduleName, [uiRouter])
         $stateProvider
             .state('pub', {
                 abstract: true,
-                templateUrl: require('./modules/header/template.html')
+                templateUrl: require('./modules/header/tmpl_header.html')
             })
             .state('pub.year', {
                 url: "/year",
-                templateUrl: require('./modules/year/template.html')
+                templateUrl: require('./modules/year/tmpl_year.html')
             })
             .state('pub.month', {
-                url: "/month?year&month&",
-                templateUrl: require('./modules/month/template.html')
+                url: "/month/:year/:month",
+                templateUrl: require('./modules/month/tmpl_month.html')
             })
             .state('pub.week', {
                 url: "/week",
-                templateUrl: require('./modules/week/template.html')
+                templateUrl: require('./modules/week/tmpl_week.html')
             });
     });
 

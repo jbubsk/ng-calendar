@@ -3,13 +3,10 @@
 var dependencies = require('./initializer').modules;
 require('styles');
 
-function initApp() {
-    require('angular').module('application', dependencies)
-        .service('AppService', require('./service'));
-}
+require('angular').module('application', dependencies)
+    .config(function ($logProvider, $provide) {
+        $logProvider.debugEnabled(CONFIG.DEBUG);
 
-initApp();
-
-if (module.hot) {
-    module.hot.accept(initApp);
-}
+        $provide.decorator('$log', require('./logger_decorator'))
+    })
+    .service('AppService', require('./service'));

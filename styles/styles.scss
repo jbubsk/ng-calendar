@@ -2,32 +2,32 @@ $header-height: 45px;
 $header-bg: #595959;
 
 @media screen and (min-width: 761px) {
-  .month-wrapper {
+  .small-month {
     width: 150px;
     height: 150px;
   }
   #page {
-    padding-left: 15%;
+    margin: 0 15%;
   }
 }
 
 @media screen and (max-width: 760px) {
-  .month-wrapper {
+  .small-month {
     width: 120px;
     height: 120px;
   }
   #page {
-    padding-left: 10%;
+    margin: 0 10%;
   }
 }
 
 @media screen and (max-width: 560px) {
-  .month-wrapper {
+  .small-month {
     width: 110px;
     height: 110px;
   }
   #page {
-    padding-left: 5%;
+    margin: 0 5%;
   }
 }
 
@@ -39,7 +39,8 @@ body {
 
 #page {
   height: 600px;
-  width: 100%;
+  width: 550px;
+  overflow: scroll;
 }
 
 .fl {
@@ -57,11 +58,19 @@ body {
 #header {
   height: $header-height;
   background: $header-bg;
-
   .title {
-    margin: 12px 15px 0;
+    height: 100%;
+    width: 150px;
+    margin-left: 15px;
     font-weight: 100;
+    font-size: 24px;
     color: rgba(234, 241, 243, 0.86);
+    border-right: 1px solid rgba(222, 225, 232, 0.86);
+
+    span {
+      display: inline-block;
+      margin-top: 8px;
+    }
   }
 }
 
@@ -73,7 +82,7 @@ body {
   height: $header-height;
   width: 60px;
   text-align: center;
-  border-left: 1px solid #989c9c;
+  border-left: 1px solid rgba(222, 225, 232, 0.86);
 
   a {
     margin: 12px 5px 0;
@@ -87,7 +96,7 @@ body {
 }
 
 .nav.active {
-  background: #ddd8c9;
+  background: rgba(222, 225, 232, 0.86);
   a {
     color: #000000;
   }
@@ -97,9 +106,28 @@ body {
   border-right: 1px solid #989c9c;
 }
 
-.period-title {
+#calendar {
   width: 100%;
-  margin: 20px 50px;
+}
+
+#calendar-header {
+  margin: 40px 0;
+  width: 100%;
+  height: 45px;
+}
+
+.arrow {
+  width: 5%;
+  font-size: 24px;
+  color: #808080;
+  margin-top: -2px;
+  cursor: pointer;
+}
+
+.period-title {
+  text-align: center;
+  width: 80%;
+  margin: 0 5%;
   font-size: 24px;
   font-weight: 200;
   color: #989c9c;
@@ -112,18 +140,21 @@ body {
   margin-left: 10%;
 }
 
-.current {
-  color: #00ac00;
-}
-
-.month-wrapper {
+.tile {
   background: rgba(222, 225, 232, 0.86);
   margin: 2px;
   border-radius: 2px;
+  cursor: pointer;
 }
 
-.small-month {
-  cursor: pointer;
+.current {
+  .small-day-title {
+    font-weight: bold;
+  }
+}
+
+.tile.current {
+  background: #a8aca4;
 }
 
 .small-month-title {
@@ -138,4 +169,30 @@ body {
   text-align: center;
   margin-top: 15%;
   font-size: 44px;
+}
+
+.small-day-title {
+  width: 100%;
+  font-weight: 200;
+  text-align: center;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.small-day {
+  width: 70px;
+  height: 50px;
+  padding: 2px;
+  font-size: 12px;
+}
+
+.day-count {
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+  font-size: 24px;
+}
+
+.empty {
+  background: none;
+  border: none;
 }
