@@ -5,7 +5,7 @@ var moduleName = 'router',
 require('angular').module(moduleName, [uiRouter])
     .config(function ($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise("/year");
+        $urlRouterProvider.otherwise("/month");
 
         $stateProvider
             .state('pub', {
@@ -19,10 +19,6 @@ require('angular').module(moduleName, [uiRouter])
             .state('pub.month', {
                 url: "/month/:year/:month",
                 templateUrl: require('./modules/month/tmpl_month.html')
-            })
-            .state('pub.week', {
-                url: "/week",
-                templateUrl: require('./modules/week/tmpl_week.html')
             });
     });
 

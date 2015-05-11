@@ -90,12 +90,22 @@ function AppService($log) {
         });
         $log.debug_ext({
             monthIndex: index,
-            monthName: result.length > 0 ? result[0].name : 'Error!'});
+            monthName: result.length > 0 ? result[0].name : 'Error!'
+        });
         return result.length > 0 ? result[0].name : '';
     }
 
     function getMonths() {
         return months;
+    }
+
+    function getCurrentDate() {
+        var date = new Date();
+
+        return {
+            year: date.getFullYear(),
+            month: date.getMonth()
+        }
     }
 
     return {
@@ -104,7 +114,8 @@ function AppService($log) {
         getDayOfWeek: getDayOfWeek,
         getNumberDaysOfMonth: getNumberDaysOfMonth,
         getDaysOfMonth: getDaysOfMonth,
-        getDaysWeeklyStructured: getDaysWeeklyStructured
+        getDaysWeeklyStructured: getDaysWeeklyStructured,
+        getCurrentDate: getCurrentDate
     }
 }
 module.exports = AppService;

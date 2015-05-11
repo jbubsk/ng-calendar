@@ -1,4 +1,4 @@
-module.exports = function () {
+function HeaderController($state, AppService) {
     this.navigs = [
         {
             name: 'Year',
@@ -11,6 +11,10 @@ module.exports = function () {
         {
             name: 'Week',
             href: 'week'
+        },
+        this.click = function () {
+            $state.go('pub.month', AppService.getCurrentDate());
         }
     ];
-};
+}
+module.exports = HeaderController;
