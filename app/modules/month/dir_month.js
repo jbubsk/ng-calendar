@@ -8,11 +8,6 @@ module.exports = function ($state) {
         link: function ($scope) {
             var date = new Date();
             $scope.click = function (day) {
-                /*$state.go('pub.week', {
-                 year: $scope.year,
-                 month: day.index,
-                 week: ''
-                 });*/
             };
             $scope.tileClass = $scope.day.index ? '' : 'empty';
             $scope.countClass =
