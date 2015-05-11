@@ -52,7 +52,7 @@ var config = {
             },
 
             {
-                test: 'include regexp',
+                test: /index.html$/,
                 loader: "file-loader?name=index.html"
             }
         ]
