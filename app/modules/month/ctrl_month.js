@@ -1,3 +1,5 @@
+"use strict";
+
 function CtrlMonth($log, $state, AppService) {
     var monthIndex = parseInt($state.params.month),
         year = parseInt($state.params.year);
@@ -32,4 +34,6 @@ function CtrlMonth($log, $state, AppService) {
         });
     }
 }
+CtrlMonth.$inject = ["$log", "$state", "AppService"];
+
 module.exports = CtrlMonth;

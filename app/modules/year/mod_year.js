@@ -1,4 +1,5 @@
 "use strict";
+
 var moduleName = 'year';
 
 require('angular').module(moduleName, [])

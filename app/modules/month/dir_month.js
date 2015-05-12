@@ -1,4 +1,6 @@
-module.exports = function ($state) {
+"use strict";
+
+function SmallDay($state) {
     return {
         restriction: 'A',
         scope: {
@@ -17,4 +19,7 @@ module.exports = function ($state) {
                     'current' : '';
         }
     }
-};
+}
+SmallDay.$inject = ["$state"];
+
+module.exports = SmallDay;

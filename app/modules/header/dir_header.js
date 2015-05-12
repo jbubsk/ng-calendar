@@ -1,4 +1,6 @@
-module.exports = function ($rootScope, $location) {
+"use strict";
+
+function NavItems($rootScope, $location) {
     return {
         restriction: 'A',
         replace: true,
@@ -24,4 +26,7 @@ module.exports = function ($rootScope, $location) {
             });
         }
     }
-};
+}
+NavItems.$inject = ["$rootScope", "$location"];
+
+module.exports = NavItems;

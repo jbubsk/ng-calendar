@@ -1,4 +1,6 @@
-module.exports = function ($state, AppService) {
+"use strict";
+
+function SmallMonth($state, AppService) {
     return {
         restriction: 'A',
         replace: true,
@@ -18,4 +20,7 @@ module.exports = function ($state, AppService) {
             $scope.classs = new Date().getMonth() === $scope.month.index ? 'current' : '';
         }
     }
-};
+}
+SmallMonth.$inject = ["$state", "AppService"];
+
+module.exports = SmallMonth;

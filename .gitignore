@@ -1,3 +1,4 @@
 .idea
 angular-learning.iml
 /node_modules
+/dist

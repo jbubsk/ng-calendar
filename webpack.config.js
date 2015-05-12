@@ -1,6 +1,5 @@
 var webpack = require('webpack'),
-    path = require('path'),
-    node_dir = __dirname + '/node_modules';
+    path = require('path');
 
 var utils = {
     getEntryApp: function () {
@@ -29,9 +28,7 @@ var config = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
-            CONFIG: {
-                DEBUG: !process.env.NODE_ENV
-            }
+            CONFIG: {DEBUG: !process.env.NODE_ENV}
         })
     ],
     output: {

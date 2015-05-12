@@ -1,3 +1,5 @@
+//"use strict"; strict mode forbids using callee
+
 var angular = require('angular');
 
 function LoggerDecorator($delegate) {
@@ -25,5 +27,6 @@ function LoggerDecorator($delegate) {
     };
     return $delegate;
 }
+LoggerDecorator.$inject = ["$delegate"];
 
 module.exports = LoggerDecorator;

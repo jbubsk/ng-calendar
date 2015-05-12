@@ -118,4 +118,6 @@ function AppService($log) {
         getCurrentDate: getCurrentDate
     }
 }
+AppService.$inject = ["$log"];
+
 module.exports = AppService;

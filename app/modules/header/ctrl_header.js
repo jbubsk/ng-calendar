@@ -1,3 +1,5 @@
+"use strict";
+
 function HeaderController($state, AppService) {
     this.navigs = [
         {
@@ -17,4 +19,6 @@ function HeaderController($state, AppService) {
         }
     ];
 }
+HeaderController.$inject = ["$state", "AppService"];
+
 module.exports = HeaderController;

@@ -1,4 +1,5 @@
 "use strict";
+
 var modules = [];
 
 modules.push(require('./router'));

@@ -1,4 +1,5 @@
 "use strict";
+
 var moduleName = 'header';
 
 require('angular').module(moduleName, [])
