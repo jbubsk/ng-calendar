@@ -2,13 +2,16 @@
 
 var angular = require('angular'),
     dependencies = require('./initializer').modules,
-    config = require('config');
+    config = require('config'),
+    LoggerDecorator = require('./logger_decorator');
 
 function AppConfig($logProvider, $provide) {
     $logProvider.debugEnabled(config.env === 'development');
 
-    $provide.decorator('$log', require('./logger_decorator'))
+    $provide.decorator('$log', LoggerDecorator)
 }
+
+AppConfig.$inject = ['$logProvider', '$provide'];
 
 angular.module('application', dependencies)
     .config(AppConfig)

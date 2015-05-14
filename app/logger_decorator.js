@@ -1,4 +1,4 @@
-//"use strict"; strict mode forbids using callee
+"use strict";
 
 var angular = require('angular');
 
@@ -6,7 +6,7 @@ function LoggerDecorator($delegate) {
     var debug = $delegate.debug;
 
     $delegate.debug_ext = function (args) {
-        var handledText = '-- ' + arguments.callee.caller.name + ' --',
+        var handledText = '',
             originMsg;
 
         if (angular.isObject(args)) {
@@ -17,15 +17,16 @@ function LoggerDecorator($delegate) {
 
             angular.forEach(originMsg, function (item) {
                 var entry = item.split(':');
-                handledText += '\n\t' + entry[0].replace(/'/g, '').replace(/"/g, '') + ': ' + entry[1];
+                handledText += entry[0].replace(/'/g, '').replace(/"/g, '') + ': ' + entry[1] + '\n';
             });
         } else {
-            handledText += '\n\t' + args;
+            handledText += args + '\n';
         }
         args.date = new Date();
         debug(handledText);
     };
     return $delegate;
 }
+LoggerDecorator.$inject = ['$delegate'];
 
 module.exports = LoggerDecorator;

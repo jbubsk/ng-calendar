@@ -8,17 +8,13 @@ var gulp = require('gulp'),
     fs = require('fs'),
     sass = require('gulp-sass'),
     browserify = require('browserify'),
-    ngAnnotate = require('browserify-ngannotate'),
     ngHtml2Js = require('browserify-ng-html2js'),
     htmlreplace = require('gulp-html-replace'),
-    minifyCSS = require('gulp-minify-css'),
-    minifyHTML = require('gulp-minify-html');
-
+    minifyCSS = require('gulp-minify-css');
 
 var vendors = ['angular', 'angular-ui-router'];
 
 var production = (process.env.NODE_ENV === 'production');
-
 
 /**** JS build ****/
 
@@ -47,9 +43,6 @@ gulp.task('build-js', function () {
         module: 'templates',
         baseDir: './app/'
     }));
-    if (production) {
-        stream.transform(ngAnnotate);
-    }
 
     fs.writeFile('./config.json', JSON.stringify({
         env: process.env.NODE_ENV || 'development'
