@@ -1,15 +1,15 @@
 "use strict";
 
-var dependencies = require('./initializer').modules;
-require('styles');
+var angular = require('angular'),
+    dependencies = require('./initializer').modules,
+    config = require('config');
 
-if(!CONFIG.DEBUG){
-    require('./index.html');
+function AppConfig($logProvider, $provide) {
+    $logProvider.debugEnabled(config.env === 'development');
+
+    $provide.decorator('$log', require('./logger_decorator'))
 }
-require('angular').module('application', dependencies)
-    .config(function ($logProvider, $provide) {
-        $logProvider.debugEnabled(CONFIG.DEBUG);
 
-        $provide.decorator('$log', require('./logger_decorator'))
-    })
+angular.module('application', dependencies)
+    .config(AppConfig)
     .service('AppService', require('./service'));

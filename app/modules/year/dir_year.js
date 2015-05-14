@@ -1,6 +1,7 @@
 "use strict";
 
 function SmallMonth($state, AppService) {
+
     return {
         restriction: 'A',
         replace: true,
@@ -8,7 +9,7 @@ function SmallMonth($state, AppService) {
             month: '=smallMonth',
             year: '@'
         },
-        templateUrl: require('./dir_tmpl_smallmonth.html'),
+        templateUrl: 'modules/year/dir_tmpl_smallmonth.html',
         link: function ($scope) {
             $scope.click = function (month) {
                 $state.go('pub.month', {
@@ -17,7 +18,7 @@ function SmallMonth($state, AppService) {
                 });
             };
             $scope.days = AppService.getNumberDaysOfMonth(2015, $scope.month.index);
-            $scope.classs = new Date().getMonth() === $scope.month.index ? 'current' : '';
+            $scope.monthClass = new Date().getMonth() === $scope.month.index ? 'current' : '';
         }
     }
 }

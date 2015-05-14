@@ -27,6 +27,5 @@ function LoggerDecorator($delegate) {
     };
     return $delegate;
 }
-LoggerDecorator.$inject = ["$delegate"];
 
 module.exports = LoggerDecorator;

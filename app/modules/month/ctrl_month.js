@@ -24,6 +24,10 @@ function CtrlMonth($log, $state, AppService) {
         });
     };
 
+    this.clickYear = function () {
+        $state.go('pub.year');
+    };
+
     this.forward = function forward() {
         var _monthIndex = monthIndex < 11 ? monthIndex + 1 : 0,
             _year = _monthIndex === 0 ? year + 1 : year;

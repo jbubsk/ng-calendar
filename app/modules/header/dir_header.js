@@ -7,7 +7,7 @@ function NavItems($rootScope, $location) {
         scope: {
             navigs: '=navItems'
         },
-        templateUrl: require('./dir_tmpl_nav.html'),
+        templateUrl: 'modules/header/dir_tmpl_nav.html',
         link: function ($scope) {
 
             function handleNavigationMenu(resolve) {

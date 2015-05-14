@@ -1,5 +1,7 @@
 <div ng-controller="YearController as year">
-    <div class="period-title">{{year.startYear}}</div>
+    <div id="calendar-header">
+        <div class="period-title">{{year.startYear}}</div>
+    </div>
     <div class="fl"
          ng-class="{clear: $index%4 === 0 && !$first}"
          ng-repeat="month in year.months">

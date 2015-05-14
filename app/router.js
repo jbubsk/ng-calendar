@@ -1,28 +1,29 @@
 "use strict";
-var moduleName = 'router',
+
+var angular = require('angular'),
+    moduleName = 'router',
     uiRouter = require('angular-ui-router');
 
 function RouteConfig($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise("/month");
+    $urlRouterProvider.otherwise("/year");
 
     $stateProvider
         .state('pub', {
             abstract: true,
-            templateUrl: require('./modules/header/tmpl_header.html')
+            templateUrl: 'modules/header/tmpl_header.html'
         })
         .state('pub.year', {
             url: "/year",
-            templateUrl: require('./modules/year/tmpl_year.html')
+            templateUrl: 'modules/year/tmpl_year.html'
         })
         .state('pub.month', {
             url: "/month/:year/:month",
-            templateUrl: require('./modules/month/tmpl_month.html')
+            templateUrl: 'modules/month/tmpl_month.html'
         });
 }
-RouteConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
 
-require('angular').module(moduleName, [uiRouter])
+angular.module(moduleName, [uiRouter])
     .config(RouteConfig);
 
 

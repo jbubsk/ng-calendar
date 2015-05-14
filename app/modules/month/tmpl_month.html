@@ -1,7 +1,10 @@
 <div ng-controller="MonthController as ctrl">
     <div id="calendar-header">
         <div class="arrow fl" ng-click="ctrl.back()">&lt;</div>
-        <div class="period-title fl">{{ctrl.period.year + ' ' + ctrl.period.month}}</div>
+        <div class="period-title fl">
+            <span class="year" ng-click="ctrl.clickYear()">{{ctrl.period.year}}</span>
+            <span>{{ctrl.period.month}}</span>
+        </div>
         <div class="arrow fr" ng-click="ctrl.forward()">&gt;</div>
         <div class="clear"></div>
     </div>

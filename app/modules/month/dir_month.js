@@ -6,7 +6,7 @@ function SmallDay($state) {
         scope: {
             day: '=smallDay'
         },
-        templateUrl: require('./dir_tmpl_smallday.html'),
+        templateUrl: 'modules/month/dir_tmpl_smallday.html',
         link: function ($scope) {
             var date = new Date();
             $scope.click = function (day) {
