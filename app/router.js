@@ -22,9 +22,9 @@ function RouteConfig($stateProvider, $urlRouterProvider) {
             templateUrl: 'modules/month/tmpl_month.html'
         });
 }
+RouteConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 angular.module(moduleName, [uiRouter])
     .config(RouteConfig);
-
 
 module.exports = moduleName;

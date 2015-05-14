@@ -1,9 +1,8 @@
 "use strict";
 
-var angular = require('angular');
-
 function LoggerDecorator($delegate) {
-    var debug = $delegate.debug;
+    var angular = require('angular'),
+        debug = $delegate.debug;
 
     $delegate.debug_ext = function (args) {
         var handledText = '',
