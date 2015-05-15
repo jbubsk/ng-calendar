@@ -1,3 +1,6 @@
+// TODO: move to gulp
+// implemented in flex branch
+
 var webpack = require('webpack'),
     path = require('path'),
     node_dir = __dirname + '/node_modules';
